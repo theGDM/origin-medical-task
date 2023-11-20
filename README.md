@@ -1,69 +1,46 @@
-# Getting Started with Create React App
+## **Tools Used :**
+**`FrontEnd:`** To make the UI of the web application, I have used the **React.js** and **Material UI** library.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**`BackEnd:`** Backend is made using the **Node.js**.
 
-## Available Scripts
+**`Cloud-Computing:`** I have used AWS, for storing the uploaded images, creating the tables, creation of REST Apis, hosting of the application and for the backend code deployment.
+
+**`Database:`** For storing the Uplaoded images I have used the **S3 Bucket**, and **DynamoDB** for maintaining the tables images, users, and labels data.
+
+**`Deployment:`** Currently the web application hosted on **AWS Amplify** and **Github**.
+
+**`Error-Logging:`** I have used **Google cloud** for printing the application logs.
+
+## **Steps to Run the Application (Locally):**
+### *First Way*
+1. Firstly fork the given repo.
+2. Create a folder named ‘Orgin-Medical’ in Visual Studio.
+3. Clone the github repo to the respective ‘Orgin-Medical’ folder, using the command.
+   > `$git clone https://github.com/YOUR-USERNAME/REPO-NAME`
+4. Now go to the ‘origin-medical-task’ directory.
+5. Now open the terminal and run the command `npm install` in the same directory, so
+    It will install all the dependencies and the modules.
+6. Now run the react app using the command `npm start`.
+7. For login as a normal user use the following credentials: 
+- > **Email:** test@gmail.com
+- > **Password:** 123
+8. For login as an admin use the following credentials: 
+- > **Email:** thegdm00@gmail.com
+- > **Password:** 12345
 
 
-### `npm start`
+**`Github Link :`** https://github.com/theGDM/origin-medical-task
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### *Second Way*
+1. Create a folder named ‘Orgin-Medical’ in Visual Studio.
+2. Unzip the emailed zip file, drag and drop the origin-medical-health directory after unzip into the Origin-Medical created folder.
+3. Now go to the ‘origin-medical-task’ directory.
+4. Now open the terminal and run the command `npm install` in the same directory, so
+    It will install all the dependencies and the modules.
+5. Now run the react app using the command `npm start`.
+6. For login as a normal user use the following credentials: 
+- > **Email:** test@gmail.com
+- > **Password:** 123
+7. For login as an admin use the following credentials: 
+- > **Email:** thegdm00@gmail.com
+- > **Password:** 12345
