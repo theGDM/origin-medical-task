@@ -1,3 +1,5 @@
+# **Origin Medical Task**
+
 ## **Tools Used :**
 **`FrontEnd:`** To make the UI of the web application, I have used the **React.js** and **Material UI** library.
 
@@ -16,17 +18,17 @@
 1. Firstly fork the given repo.
 2. Create a folder named ‘Orgin-Medical’ in Visual Studio.
 3. Clone the github repo to the respective ‘Orgin-Medical’ folder, using the command.
-   > `$git clone https://github.com/YOUR-USERNAME/REPO-NAME`
+   - > `$git clone https://github.com/YOUR-USERNAME/REPO-NAME`
 4. Now go to the ‘origin-medical-task’ directory.
 5. Now open the terminal and run the command `npm install` in the same directory, so
     It will install all the dependencies and the modules.
 6. Now run the react app using the command `npm start`.
 7. For login as a normal user use the following credentials: 
-- > **Email:** test@gmail.com
-- > **Password:** 123
+    - > **Email:** test@gmail.com
+    - > **Password:** 123
 8. For login as an admin use the following credentials: 
-- > **Email:** thegdm00@gmail.com
-- > **Password:** 12345
+    - > **Email:** thegdm00@gmail.com
+    - > **Password:** 12345
 
 
 **`Github Link :`** https://github.com/theGDM/origin-medical-task
@@ -39,8 +41,19 @@
     It will install all the dependencies and the modules.
 5. Now run the react app using the command `npm start`.
 6. For login as a normal user use the following credentials: 
-- > **Email:** test@gmail.com
-- > **Password:** 123
+    - > **Email:** test@gmail.com
+    - > **Password:** 123
 7. For login as an admin use the following credentials: 
-- > **Email:** thegdm00@gmail.com
-- > **Password:** 12345
+    - > **Email:** thegdm00@gmail.com
+    - > **Password:** 12345
+
+## **Steps to Run the Application (Production):**
+
+1. The application is deployed on the Netlify.
+    - > https://timely-mandazi-c2bb15.netlify.app/
+2. For login as a normal user use the following credentials: 
+    - > **Email:** test@gmail.com
+    - > **Password:** 123
+3. For login as an admin use the following credentials: 
+    - > **Email:** thegdm00@gmail.com
+    - > **Password:** 12345
