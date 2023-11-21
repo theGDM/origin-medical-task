@@ -13,13 +13,17 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { upload_image } from "../services/api";
 import { ToastContainer, toast } from 'react-toastify';
 import AWS from 'aws-sdk';
+import dotenv from 'dotenv';
 import { ThreeDots } from "react-loader-spinner";
 
 AWS.config.update({
-    accessKeyId: 'AKIA3LC5V7EWVSMQEHGD',
-    secretAccessKey: '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',
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey,
     region: 'us-east-1',
 });
+
+// Load environment variables
+dotenv.config();
 
 const s3 = new AWS.S3();
 
