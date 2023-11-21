@@ -18,7 +18,7 @@
 1. Firstly fork the given repo.
 2. Create a folder named ‘Orgin-Medical’ in Visual Studio.
 3. Clone the github repo to the respective ‘Orgin-Medical’ folder, using the command.
-   - > `$git clone https://github.com/YOUR-USERNAME/REPO-NAME`
+   - `$git clone https://github.com/YOUR-USERNAME/REPO-NAME`
 4. Now go to the ‘origin-medical-task’ directory.
 5. Now open the terminal and run the command `npm install` in the same directory, so
     It will install all the dependencies and the modules.

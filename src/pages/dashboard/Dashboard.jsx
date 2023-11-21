@@ -3,26 +3,17 @@ import { tokens } from "../../theme";
 import Header from "../../components/Header.jsx";
 import { useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { delete_image, get_all_images, update_image } from "../../services/api.js";
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { fetchLablesData } from "../../actions/labelAction.js";
 
 const Dashboard = () => {
     const theme = useTheme();
@@ -30,9 +21,12 @@ const Dashboard = () => {
     const navigate = useNavigate();
     let adminData = useSelector((state) => state.admin);
     let [images, setImages] = useState([]);
+    let [tempImages, setTempImages] = useState([]);
     let isAdmin = localStorage.getItem('isAdmin');
     const [selectedValues, setSelectedValues] = useState([]);
     const labelsData = useSelector((state) => state.label);
+    const sortData = useSelector((state) => state.sort);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const user = localStorage.getItem("userEmail");
@@ -42,8 +36,22 @@ const Dashboard = () => {
         (async () => {
             let response = await get_all_images();
             setImages(response.data.labelsData);
+            setTempImages(response.data.labelsData);
         })();
+
+        dispatch(fetchLablesData());
     }, []);
+
+    useEffect(() => {
+        console.log(sortData.sortArray);
+        let tImages = [...tempImages];
+        if (sortData.sortArray.length != 0) {
+            let filterImages = tImages.filter((image) => sortData.sortArray.every(label => image.labels.includes(label)));
+            setImages(filterImages);
+        } else {
+            setImages(tempImages);
+        }
+    }, [sortData.sortArray]);
 
     const handleDelete = async (imageId, imageTitle, deleteImage) => {
         let updatedImages = images.filter(image => image.image_id != deleteImage.image_id);
@@ -93,7 +101,7 @@ const Dashboard = () => {
                 justifyContent='space-between'
             >
                 {images.map((image, index) => (
-                    <Card sx={{ backgroundColor: colors.primary[500], maxWidth: 345 }}>
+                    <Card sx={{ backgroundColor: colors.primary[500], maxWidth: 345, m: "20px 0 0 0" }}>
                         {isAdmin == 'true' ? <CardHeader
                             action={
                                 <IconButton aria-label="settings" onClick={() => handleDelete(image.image_id, image.image_title, image)} >

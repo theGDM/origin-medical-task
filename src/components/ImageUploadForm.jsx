@@ -16,8 +16,8 @@ import AWS from 'aws-sdk';
 import { ThreeDots } from "react-loader-spinner";
 
 AWS.config.update({
-    accessKeyId: 'AKIA3LC5V7EW545PMV5L',
-    secretAccessKey: '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',
+    accessKeyId: 'AKIA3LC5V7EWVSMQEHGD',
+    secretAccessKey: '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',
     region: 'us-east-1',
 });
 
