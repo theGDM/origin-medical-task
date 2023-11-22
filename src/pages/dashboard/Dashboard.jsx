@@ -101,7 +101,7 @@ const Dashboard = () => {
                 justifyContent='space-between'
             >
                 {images.map((image, index) => (
-                    <Card sx={{ backgroundColor: colors.primary[500], maxWidth: 345, m: "20px 0 0 0" }}>
+                    <Card sx={{ backgroundColor: colors.primary[500], width: 345, m: "20px 0 0 0" }}>
                         {isAdmin == 'true' ? <CardHeader
                             action={
                                 <IconButton aria-label="settings" onClick={() => handleDelete(image.image_id, image.image_title, image)} >
@@ -113,6 +113,8 @@ const Dashboard = () => {
                         <CardMedia
                             component="img"
                             height="194"
+
+                            sx={{ objectFit: 'cover' }}
                             image={image.image_url}
                             alt="image"
                         />

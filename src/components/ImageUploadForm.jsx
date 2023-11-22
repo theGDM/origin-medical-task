@@ -13,17 +13,15 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { upload_image } from "../services/api";
 import { ToastContainer, toast } from 'react-toastify';
 import AWS from 'aws-sdk';
-import dotenv from 'dotenv';
 import { ThreeDots } from "react-loader-spinner";
 
 AWS.config.update({
-    accessKeyId: process.env.accessKeyId,
-    secretAccessKey: process.env.secretAccessKey,
+    accessKeyId: process.env.REACT_APP_accessKeyId,
+    secretAccessKey: process.env.REACT_APP_secretAccessKey,
     region: 'us-east-1',
 });
 
 // Load environment variables
-dotenv.config();
 
 const s3 = new AWS.S3();
 
@@ -65,13 +63,13 @@ export default function ImageUploadForm() {
                 toast('Error uploading file to S3!');
             } else {
                 console.log('File uploaded successfully:', data);
+                toast('File uploaded successfully!');
             }
         });
 
 
         await upload_image(imageTitle, selectedValues, selectedFile.name);
         setUploaded(false);
-        toast('File Uploaded Successfully!');
     };
 
     const handleChange = (event) => {
