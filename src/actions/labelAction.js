@@ -21,17 +21,14 @@ export const SetLabelsDetails = (data) => ({
 
 
 export const fetchLablesData = () => {
-    console.log('Hyyyyyy');
     return async (dispatch) => {
         try {
             let data_retries = 1;
             dispatch(LabelsSuccess([]));
-            console.log('vbhvh')
             while (data_retries < 4) {
                 dispatch(LabelsRequest());
                 await get_all_labels()
                     .then((response) => {
-                        console.log('bhdjbsdjb')
                         console.log(response.data.labelsData);
 
                         const lablesData = response.data.labelsData;

@@ -50,7 +50,7 @@
 ## **Steps to Run the Application (Production):**
 
 1. The application is deployed on the Netlify.
-    - > https://timely-mandazi-c2bb15.netlify.app/
+    - > https://main.d1a2d7y3b37h9m.amplifyapp.com/
 2. For login as a normal user use the following credentials: 
     - > **Email:** test@gmail.com
     - > **Password:** 123

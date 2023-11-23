@@ -23,6 +23,9 @@ const Dashboard = () => {
     let [images, setImages] = useState([]);
     let [tempImages, setTempImages] = useState([]);
     let isAdmin = localStorage.getItem('isAdmin');
+    let [selectedPage, setSelectedPage] = useState(0);
+    let [pageCount, setPageCount] = useState(1);
+    let [paginationArray, setPaginationArray] = useState([]);
     const [selectedValues, setSelectedValues] = useState([]);
     const labelsData = useSelector((state) => state.label);
     const sortData = useSelector((state) => state.sort);
@@ -31,12 +34,50 @@ const Dashboard = () => {
     useEffect(() => {
         const user = localStorage.getItem("userEmail");
         if (!user) navigate("/");
-        console.log(adminData.isAdmin);
 
         (async () => {
             let response = await get_all_images();
-            setImages(response.data.labelsData);
+            setImages(response.data.labelsData.slice(0, 8));
             setTempImages(response.data.labelsData);
+
+            // let tempPagesCount = Math.ceil(response.data.labelsData.length / 8);
+            // console.log(tempPagesCount);
+            // let tempPaginationArray = Array.from({ length: tempPagesCount }, (_, index) => (
+            //     selectedPage != index ? <Box
+            //         width='40px'
+            //         height='20px'
+            //         backgroundColor={colors.primary[400]}
+            //         ml='5px'
+            //         display='flex'
+            //         justifyContent='center'
+            //         alignItems='center'
+            //         borderRadius='4px'
+            //         sx={{
+            //             "&:hover": {
+            //                 backgroundColor: colors.greenAccent[600], // Set your desired hover color
+            //             },
+            //             cursor: 'pointer'
+            //         }}
+            //         onClick={() => handlePageClick(index)}
+            //     >
+            //         {index + 1}
+            //     </Box> : <Box width='40px'
+            //         height='20px'
+            //         backgroundColor={colors.greenAccent[600]}
+            //         ml='5px'
+            //         color={colors.primary[400]}
+            //         display='flex'
+            //         justifyContent='center'
+            //         alignItems='center'
+            //         borderRadius='4px'
+            //         sx={{ cursor: 'pointer' }}
+            //         onClick={() => handlePageClick(index)}
+            //     >
+            //         {index + 1}
+            //     </Box>
+            // ));
+            // console.log(tempPaginationArray);
+            // setPaginationArray(tempPaginationArray);
         })();
 
         dispatch(fetchLablesData());
@@ -59,8 +100,17 @@ const Dashboard = () => {
         await delete_image(imageId, imageTitle);
     }
 
+    const handlePageClick = (pageIndex) => {
+        console.log(pageIndex);
+        console.log(tempImages);
+        console.log(`range : ${pageIndex * 8} : ${pageIndex * 8 + 8}`);
+        console.log(tempImages);
+        let newImages = tempImages.slice(pageIndex * 8, pageIndex * 8 + 8);
+        setImages(newImages);
+    }
+
     const handleDeleteLabel = async (imageId, imageTitle, deleteLabel, image, index) => {
-        console.log(index);
+        setSelectedPage(index);
         let updatedLabels = image.labels.filter(label => label != deleteLabel);
         await update_image(imageId, imageTitle, updatedLabels);
         image.labels = updatedLabels;
@@ -93,8 +143,10 @@ const Dashboard = () => {
                 title="Main Dashboard"
                 subtitle="Dashboard for Users"
             />
+            <Box m="20px 0 20px 0" display='flex' flexDirection='row'>
+                {paginationArray}
+            </Box>
             <Box
-                m="40px 0 0 0"
                 display='flex'
                 flexDirection='row'
                 flexWrap='wrap'
