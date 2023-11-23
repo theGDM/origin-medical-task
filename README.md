@@ -1,4 +1,7 @@
 # **Origin Medical Task**
+![Screenshot 2023-11-20 150555](https://github.com/theGDM/origin-medical-task/assets/89511377/63ae49e5-aa84-4f81-a87a-7f0a19329921)
+![Screenshot 2023-11-23 162653](https://github.com/theGDM/origin-medical-task/assets/89511377/56638d3e-8cad-4928-a7cc-6c23e6df5838)
+![Screenshot 2023-11-23 162555](https://github.com/theGDM/origin-medical-task/assets/89511377/eb18157a-c10d-46b6-8f8c-4364274e107b)
 
 ## **Tools Used :**
 **`FrontEnd:`** To make the UI of the web application, I have used the **React.js** and **Material UI** library.
