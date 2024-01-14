@@ -16,6 +16,7 @@ import AWS from 'aws-sdk';
 import { ThreeDots } from "react-loader-spinner";
 
 AWS.config.update({
+    apiVersion: "2010-12-01",
     accessKeyId: process.env.REACT_APP_accessKeyId,
     secretAccessKey: process.env.REACT_APP_secretAccessKey,
     region: 'us-east-1',
